@@ -1,8 +1,17 @@
+from user_controls import UserConcerns
 if __name__ =='__main__':
-
+    user=UserConcerns()
 
     username=input("Enter your username:  ")
-    password=''
+    password=None
+    
+    while username in user.database:
+        user.login_user(username,password)
+        print("{} you are logged in".format(username))     
+     
+    else:
+        print("Please sign up")
+        user.create_user(username,password)
 
     print ("Select Option")
     print(20 * "-", "MENU", 20 * "-")

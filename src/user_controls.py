@@ -16,7 +16,7 @@ class UserConcerns:
             'password':input_password}
         if len(input_username)< 5:
             response_object='Please make your username a bit longer'
-            return response_object
+            print (response_object)
         elif len(input_password)< 5:
             print ('make the password longer than 5 characters')
         
