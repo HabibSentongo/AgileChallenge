@@ -1,26 +1,10 @@
-import uuid
 from datetime import datetime 
-class User:
+class UserConcerns:
 
-    def __init__(self, id, firstname, lastname, username, role,password):
-        self.id = int(uuid.uuid4())
-        self.firstname = firstname
-        self.lastname = lastname
+    def __init__(self, user_id=None, username =None,password=None):
+        self.user_id = None
         self.username = username
-        self.role = role
         self.password = password
+        self.database=[]
 
-        
-
-    def get_user_details(self):
-        return {
-            'id': self.id,
-            'firstname': self.firstname,
-            'lastname': self.lastname,
-            'username': self.username,
-            'role': self.role,
-            'password': self.password
-
-
-
-        }
+    
