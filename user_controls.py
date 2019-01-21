@@ -18,11 +18,11 @@ class UserConcerns:
             response_object='Please make your username a bit longer'
             return response_object
         elif len(input_password)< 5:
-            response='make the password longer than 5 characters'
-            return response
+            print ('make the password longer than 5 characters')
+        
         else:
             self.database.append(self.one_user)
-            return ('{0}\'s account has successfully\
+            print ('{0}\'s account has successfully\
              been created'.format(self.username))
 
     def login_user(self,username,password):
@@ -36,13 +36,8 @@ class UserConcerns:
             if (input_username,input_password) == (
                 user[username],user[password]
                 ):
-                message= "{0} is now logged in at {1}".format(input_username,self.date)
-                response_object={'message':message}
-                return response_object
+                print ( "{0} is now logged in at {1}".format(input_username,self.date))
+                
             else:
-                response_object="invalid login credentials"
-                return response_object
-
-if __name__ == "__main__":
-    UserConcerns().create_user()
-    UserConcerns().login_user()
+                print ("invalid login credentials")
+                
