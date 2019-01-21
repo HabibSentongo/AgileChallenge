@@ -14,16 +14,16 @@ class UserConcerns:
         self.one_user={
             'username':input_username,
             'password':input_password}
-        if len(input_username)< 5:
-            response_object='Please make your username a bit longer'
-            print (response_object)
-        elif len(input_password)< 5:
-            print ('make the password longer than 5 characters')
+        # if len(input_username)< 5:
+        #     response_object='Please make your username a bit longer'
+        #     print (response_object)
+        # elif len(input_password)< 5:
+        #     print ('make the password longer than 5 characters')
         
-        else:
-            self.database.append(self.one_user)
-            print ('{0}\'s account has successfully\
-             been created'.format(self.username))
+        
+        self.database.append(self.one_user)
+        print ('{0}\'s account has successfully\
+            been created'.format(self.username))
 
     def login_user(self,username,password):
         input_username=input("Type your username here: ")

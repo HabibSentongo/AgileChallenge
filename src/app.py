@@ -1,6 +1,8 @@
 from user_controls import UserConcerns
+from comments import Comment
 if __name__ =='__main__':
     user=UserConcerns()
+    comment =Comment()
 
     
 
@@ -34,11 +36,12 @@ if __name__ =='__main__':
             print("1.Write a comment")
         elif selection ==2 :
             print("2.Edit a comment")
-            task=str(input("Enter comment_id you want to edit: "))
-           
+
+            comment_id=str(input("Enter comment_id you want to edit: "))
+            comment.edit_comment(comment_id)
         elif selection ==3:
             print("3. Delete a comment")
-            task=str(input("Enter comment_id you want to delete: "))
+            comment=str(input("Enter comment_id you want to delete: "))
          
         elif selection==4:
             print("3.Deleting all comments")
