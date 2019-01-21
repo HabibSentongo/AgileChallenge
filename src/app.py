@@ -2,16 +2,7 @@ from user_controls import UserConcerns
 if __name__ =='__main__':
     user=UserConcerns()
 
-    username=input("Enter your username:  ")
-    password=None
     
-    while username in user.database:
-        user.login_user(username,password)
-        print("{} you are logged in".format(username))     
-     
-    else:
-        print("Please sign up")
-        user.create_user(username,password)
 
     print ("Select Option")
     print(20 * "-", "MENU", 20 * "-")
@@ -27,9 +18,20 @@ if __name__ =='__main__':
     while loop:
         selection = int(input("selection: "))
 
+        if selection== 0:
+            print("0.Login")
+        username=input("Enter your username:  ")
+        password=None
+        
+        while username in user.database:
+            user.login_user(username,password)
+            print("{} you are logged in".format(username))     
+        
+        else:
+            print("Please sign up")
+        user.create_user(username,password)
         if selection== 1:
             print("1.Write a comment")
-
         elif selection ==2 :
             print("2.Edit a comment")
             task=str(input("Enter comment_id you want to edit: "))
